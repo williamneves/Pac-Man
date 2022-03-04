@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: black;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+div#title {
+    text-align: center;
+    margin: 1em auto;
+    color: wheat;
+}
+
+div#world-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+div#pac-man {
+    height: 23px;
+    width: 23px;
+    background: url(pacman.gif) no-repeat center center;
+    background-size: 21px;
+    transform: rotate(0deg);
+    position: relative;
+    top: 25px;
+    left: 25px;
+    margin-bottom: -23px;
+}
+.row {
+    display: flex;
+    justify-content: center;
+}
+.brick {
+    background-color: #ededed;
+}
+
+.path {
+    background-color: #181818;
+}
+
+.brick, .path {
+    width: 25px;
+    height: 25px;
+}
+
+
+
