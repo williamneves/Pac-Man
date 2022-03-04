@@ -13,7 +13,7 @@ body {
 div#title {
     text-align: center;
     margin: 1em auto;
-    color: wheat;
+    color: #ffff00;
 }
 
 div#world-container {
@@ -21,21 +21,24 @@ div#world-container {
     height: 600px;
     margin: 0 auto;
 }
+#world-map{
+    box-shadow: 0 0 0 4px #ffff00;
+}
 
 div#pacman {
     height: 25px;
     width: 25px;
     background: url(pacman.gif) no-repeat center center;
-    background-size: 21px;
+    background-size: 22px;
     transform: rotate(0deg);
     position: relative;
-    top: 27px;
+    top: 25px;
     left: 25px;
-    margin-bottom: -23px;
+    margin-bottom: -25px;
     z-index: 99;
 }
 .coin {
-    background: url(coin.gif) no-repeat center center #181818;
+    background: url(coin.gif) no-repeat center center #161a24;
     background-size: 15px;
     transform: rotate(0deg);
     z-index: 1;
@@ -46,11 +49,11 @@ div#pacman {
     justify-content: center;
 }
 .brick {
-    background-color: #ededed;
+    background-color: #1e2c81;
 }
 
 .path {
-    background-color: #181818;
+    background-color: #161a24;
 }
 
 .brick, .path, .coin {
