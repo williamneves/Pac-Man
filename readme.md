@@ -8,12 +8,12 @@ _Inspired by the classic **PAC-MAN** game, this game was conceived to amuse thos
 ## Features
 **To 1.0 version**
 
- - [ ] Pac-man moves around map, but blocked by walls.
+ - [X] Pac-man moves around map, but blocked by walls.
  - [ ] Collision with ghosts looses life.
- - [ ] Set a timer to complete the game
- - [ ] Insert score
- - [ ] Insert coins and cherry to increase the score
- - [ ] The time going down, decrease the score
+ - [X] Set a timer to complete the game (with a bug)
+ - [X] Insert score
+ - [X] Insert coins and cherry to increase the score
+ - [X] The time going down, decrease the score
  - [ ] Get the option to restart the game
  - [ ] Get 4 ghosts and movely ramdonly around the map
  - [ ] If collides on pacman, dies and pacman loose 1 life
