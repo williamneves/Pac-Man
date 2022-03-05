@@ -6,7 +6,7 @@ _Inspired by the classic **PAC-MAN** game, this game was conceived to amuse thos
 ---
 
 ## Features
-**To 1.0 version**
+**To 1.0 version** _50% done_
 
  - [X] Pac-man moves around map, but blocked by walls.
  - [ ] Collision with ghosts looses life.
