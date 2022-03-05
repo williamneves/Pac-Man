@@ -33,6 +33,9 @@ var cherry = 0 // will be defined on the map
 var timer = 90
 var triggerTimer = false
 var timeExp = false
+var freezeTime = false
+var freezeTimer = 5
+var ghostSpeed = 1000
 
 // Draw the MAP
 function drawWorld() {
@@ -131,7 +134,7 @@ function drawCherry() {
 }
 drawCherry()
 
-async function setTimer() {
+function setTimer() {
     if (triggerTimer && timer == 90) {
         myfunc = setInterval(function () {
             if (timer != 0) {
@@ -148,8 +151,85 @@ async function setTimer() {
     }
 }
 
-document.onkeydown = function (key) {
+// GHOSTS MOVE FUNCTION
 
+
+function ghostMove(enemy) {
+    gps = ""
+    if (enemy.lives > 0 && triggerTimer) {
+        function getPacPos() {
+            if (pacman.y < enemy.y) {
+                gps += "U"
+            }
+            if (pacman.y > enemy.y) {
+                gps += "D"
+            }
+            if (pacman.x < enemy.x) {
+                gps += "L"
+            }
+            if (pacman.x > enemy.x) {
+                gps += "R"
+            }
+        }
+        getPacPos();
+        console.log(gps)
+        if (gps == "L" && world[enemy.y][enemy.x - 1] != 2) { // LEFT
+            enemy.x--;
+        }
+        if (gps == "R" && world[enemy.y][enemy.x + 1] != 2) { // RIGHT
+            enemy.x++;
+        }
+        if (gps == "U" && world[enemy.y - 1][enemy.x] != 2) { // UP
+            enemy.y--;
+        }
+        if (gps == "D" && world[enemy.y + 1][enemy.x] != 2) { // DOWN
+            enemy.y++;
+        }
+        if (gps == "UL"){
+            if (world[enemy.y - 1][enemy.x] != 2) { // UP
+                enemy.y--;
+            }
+            if (world[enemy.y - 1][enemy.x] == 2 && world[enemy.y][enemy.x - 1] != 2) { // LEFT
+                enemy.x--;
+            }
+        }
+        if (gps == "UR"){
+            if (world[enemy.y - 1][enemy.x] != 2) { // UP
+                enemy.y--;
+            }
+            if (world[enemy.y - 1][enemy.x] == 2 && world[enemy.y][enemy.x + 1] != 2) { // RIGHT
+                enemy.x++;
+            }
+        }
+        if (gps == "DL"){
+            if (world[enemy.y + 1][enemy.x] != 2) { // UP
+                enemy.y++;
+            }
+            if (world[enemy.y + 1][enemy.x] == 2 && world[enemy.y][enemy.x - 1] != 2) { // LEFT
+                enemy.x--;
+            }
+        }
+        if (gps == "DR"){
+            if (world[enemy.y + 1][enemy.x] != 2) { // UP
+                enemy.y++;
+            }
+            if (world[enemy.y - 1][enemy.x] == 2 && world[enemy.y][enemy.x + 1] != 2) { // RIGHT
+                enemy.x++;
+            }
+        }
+    }
+}
+setInterval(() => {
+    ghostMove(ghosts[1]);
+    ghostMove(ghosts[2]);
+    ghostMove(ghosts[3]);
+    ghostMove(ghosts[4]);
+    drawGhosts();
+}, ghostSpeed);
+
+
+// PACMAN MOVE FUNCTINON
+document.onkeydown = function (key) {
     if (key.keyCode == 37) {
         if (world[pacman.y][pacman.x - 1] != 2) { // LEFT
             pacman.x--;
@@ -178,19 +258,17 @@ document.onkeydown = function (key) {
             triggerTimer = true;
         }
     }
-
-    if (world[pacman.y][pacman.x] == 0) {
-    }
-
+    // if (world[pacman.y][pacman.x] == 0) {
+    // }
     if (world[pacman.y][pacman.x] == 1) {
         score += 15
         world[pacman.y][pacman.x] = 0
     }
-
     if (world[pacman.y][pacman.x] == 3) {
         score += 50
         world[pacman.y][pacman.x] = 0
     }
+
     drawGhosts()
     pacGhostColl()
     drawScore()
