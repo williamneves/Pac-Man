@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,52 @@
     <title>The PacMan</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    
+
+
     <div class="container">
         <div id="title">
-            <h1>The PacMan Game</h1>
+            <img src="pacman-logo.png" alt="The PacMan Game">
         </div>
         <div id="world-container">
             <div id="pacman"></div>
-            <div id="world-map">
+            <div id="ghost1">
+                <img src="ghost1.gif" alt="ghost gif">
+            </div>
+            <div id="ghost2">
+                <img src="ghost2.gif" alt="ghost gif">
+            </div>
+            <div id="ghost3">
+                <img src="ghost2.gif" alt="ghost gif">
+            </div>
+            <div id="ghost4">
+                <img src="ghost1.gif" alt="ghost gif">
+            </div>
+            <div id="world-map"></div>
+        </div>
+        <div id="numbers">
+            <div id="lifes">
+                <img src="pacman-life.ico" alt="pacman lifes">
+                <img src="pacman-life.ico" alt="pacman lifes">
+                <img src="pacman-life.ico" alt="pacman lifes">
+            </div>
+            <div id="scores">0</div>
+            <div id="cherrys">
+                <img src="cherry.png" alt="cherry image"><span id="cherrys-num">4</span>
+            </div>
+            <div id="timer">90s</div>
+            <div id="record">
+                <ul id="highScores">
+                    <li>WILL: 350pts</li>
+                    <li>WILL: 250pts</li>
+                    <li>WILL: 150pts</li>
+                </ul>
             </div>
         </div>
-        <div id="scores"></div>
+
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
