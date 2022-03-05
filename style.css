@@ -25,7 +25,6 @@ div#world-container {
 }
 #world-map{
     box-shadow: 0 0 0 3px #ffff00;
-    margin-top: -100px;
 }
 
 div#pacman {
@@ -41,18 +40,17 @@ div#pacman {
     z-index: 99;
 }
 #ghost1,#ghost2,#ghost3,#ghost4 {
-    position:relative;
     height: 25px;
     width: 25px;
-}
-#ghost1 img,#ghost2 img,#ghost3 img,#ghost4 img{
-    position:relative;
-    height: 24px;
-    width: 24px;
-    top: 27px;
+    transform: rotate(0deg);
+    position: relative;
+    top: 25px;
     left: 25px;
-    margin: auto;
+    margin-bottom: -25px;
+    z-index: 97;
 }
+#ghost1,#ghost4{background: url(ghost1.gif) no-repeat center center;background-size: 22px;}
+#ghost2,#ghost3{background: url(ghost2.gif) no-repeat center center;background-size: 22px;}
 .coin {
     background: url(coin.gif) no-repeat center center #161a24;
     background-size: 15px;
@@ -126,11 +124,11 @@ ul#highScores {
     font-size: 1.3em;
     font-weight: bold;
 }
-div#lifes img {
+div#lives img {
     height: 30px;
 }
 
-div#lifes {
+div#lives {
     height: 35px;
     width: 100px;
     border: 3px solid yellow;
